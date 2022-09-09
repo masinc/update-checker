@@ -3,5 +3,3 @@
 </script>
 
 <Tab />
-:wq
-a
