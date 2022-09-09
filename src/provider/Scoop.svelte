@@ -1,5 +1,4 @@
 <script lang="ts">
-    // import Provider, {ScoopProvider} from "../lib/ProviderBody.svelte";
     import Provider from "../lib/Provider.svelte";
 
     import {scoopProvider} from "../lib/providers";
