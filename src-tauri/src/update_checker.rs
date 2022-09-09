@@ -38,7 +38,7 @@ pub enum CheckError {
     Io(std::io::Error),
 }
 
-pub fn check_app_command(app_name: &str) -> Result<PathBuf, CheckError> {
+pub fn get_app_command_path(app_name: &str) -> Result<PathBuf, CheckError> {
     which(app_name).map_err(|_| CheckError::AppNotFound {
         app_name: app_name.to_string(),
     })

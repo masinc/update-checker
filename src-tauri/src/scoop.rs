@@ -3,7 +3,7 @@ use once_cell::sync::Lazy;
 use regex::Regex;
 use std::process;
 
-use crate::update_checker::check_app_command;
+use crate::update_checker::get_app_command_path;
 use crate::{update_checker::CheckError, UpdateChecker, UpdateStatus};
 
 #[derive(Debug)]
@@ -31,7 +31,7 @@ static RE_CHECK_UPDATE: Lazy<Regex> =
 #[async_trait]
 impl UpdateChecker for ScoopUpdateChecker {
     async fn check_update(&self) -> Result<Vec<UpdateStatus>, CheckError> {
-        let app = check_app_command(&self.app_name)?;
+        let app = get_app_command_path(&self.app_name)?;
 
         let output = process::Command::new(app)
             .arg("status")
