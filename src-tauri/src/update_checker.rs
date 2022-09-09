@@ -7,8 +7,6 @@ use which::which;
 #[async_trait]
 pub trait UpdateChecker {
     async fn check_update(&self) -> Result<Vec<UpdateStatus>, CheckError>;
-    async fn update_all(&self) -> bool;
-    async fn update(&self) -> bool;
 }
 
 #[derive(Debug, Hash, PartialEq, Eq, Clone, Serialize, Deserialize)]

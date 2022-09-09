@@ -54,11 +54,4 @@ impl UpdateChecker for ScoopUpdateChecker {
             })
             .collect())
     }
-
-    async fn update_all(&self) -> bool {
-        todo!()
-    }
-    async fn update(&self) -> bool {
-        todo!()
-    }
 }
